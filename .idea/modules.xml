@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/desarrollo-proyecto.iml" filepath="$PROJECT_DIR$/.idea/desarrollo-proyecto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Soltec.iml" filepath="$PROJECT_DIR$/.idea/Soltec.iml" />
     </modules>
   </component>
 </project>
