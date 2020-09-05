@@ -1,0 +1,36 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <td>ID Almacen</td>
+        <td>Clave</td>
+        <td>Descripcion</td>
+        <td>ID Domicilio</td>
+        <td>Estatus</td>
+        <td>Acciones</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% if almacen %}
+    {% for almacen in almacen %}
+    <tr>
+        <td>{{ almacen.almacen_id }}</td>
+        <td>{{ almacen.clave }}</td>
+        <td>{{ almacen.descripcion }}</td>
+        <td>{{ almacen.id_domicilio }}</td>
+        <td>{{ almacen.status }}</td>
+        <td>
+            <a class="btn btn-primary" href="{% url 'almacen_editar' almacen.almacen_id %}">Editar</a>
+            <a class="btn btn-danger" href="{% url 'almacen_eliminar' almacen.almacen_id %}">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+    {% else %}
+    <h1> No hay registros de mascotas </h1>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock %}
