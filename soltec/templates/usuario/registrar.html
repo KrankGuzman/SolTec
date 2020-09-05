@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
-
+{% block navbar%}
+{% endblock %}
 {% block content %}
 <form method="post">
     {% csrf_token %}
@@ -7,44 +8,51 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="form-group">
-                <label>ID Almacen</label>
-                <input class="form-control" type="number" name="almacen_id">
+                <label>Nombre</label>
+                <input class="form-control" type="text" name="first_name">
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="form-group">
-                <label >Clave</label>
-                <input class="form-control" type="text" name="clave">
+                <label >Apellidos</label>
+                <input class="form-control" type="text" name="last_name">
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="form-group">
-                <label >Descripción</label>
-                <input class="form-control" type="text" name="descripcion">
+                <label >Nombre de usuario</label>
+                <input class="form-control" type="text" name="username">
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="form-group">
-                <label >ID Dirección</label>
-                <input class="form-control" type="number" name="id_direccion">
+                <label >Correo</label>
+                <input class="form-control" type="text" name="email">
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="form-group">
-                <label >Estatus</label>
-                <input class="form-control" type="number" name="status">
+                <label >Contraseña</label>
+                <input class="form-control" type="password" name="password1">
             </div>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label >Confirmar contraseña</label>
+                <input class="form-control" type="password" name="password2">
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

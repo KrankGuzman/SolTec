@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 from apps.organizacion.forms import AlmacenForm
 from apps.organizacion.models import Almacen
 
@@ -40,3 +42,24 @@ def almacen_delete(request, almacen_id):
         almacen.delete()
         return redirect(almacen_list)
     return render(request, 'organizacion/almacen_delete.html',{'almacen':almacen})
+
+class AlmacenList(ListView):
+    model = Almacen
+    template_name = 'organizacion/almacen_list.html'
+
+class AlmacenCreate(CreateView):
+    model = Almacen
+    form_class = AlmacenForm
+    template_name = 'organizacion/almacen_form.html'
+    success_url = reverse_lazy('almacen_listar')
+
+class AlmacenUpdate(UpdateView):
+    model = Almacen
+    form_class = AlmacenForm
+    template_name = 'organizacion/almacen_form.html'
+    success_url = reverse_lazy('almacen_listar')
+
+class AlmacenDelete(DeleteView):
+    model = Almacen
+    template_name = 'organizacion/almacen_delete.html'
+    success_url = reverse_lazy('almacen_listar')

@@ -13,8 +13,8 @@
     </tr>
     </thead>
     <tbody>
-    {% if almacen %}
-    {% for almacen in almacen %}
+    {% if object_list %}
+    {% for almacen in object_list %}
     <tr>
         <td>{{ almacen.almacen_id }}</td>
         <td>{{ almacen.clave }}</td>
